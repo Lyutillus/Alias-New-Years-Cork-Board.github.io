@@ -175,11 +175,11 @@ soundToggle.addEventListener('click', () => {
     isSoundMuted = !isSoundMuted;
     if (isSoundMuted) 
     {
-        soundIcon.src = 'icons/volume_off.png'; // Change to mute icon
+        soundIcon.src = 'Icons/volume_off.png'; // Change to mute icon
     } 
     else 
     {
-        soundIcon.src = 'icons/volume_on.png'; // Change to sound on icon
+        soundIcon.src = 'Icons/volume_on.png'; // Change to sound on icon
     }
 });
 
@@ -187,12 +187,12 @@ soundToggle.addEventListener('click', () => {
 musicToggle.addEventListener('click', () => {
     isMusicMuted = !isMusicMuted;
     if (isMusicMuted) {
-        musicIcon.src = 'icons/music_off.png'; // Change to mute icon
+        musicIcon.src = 'Icons/music_off.png'; // Change to mute icon
         // Mute background music
         const backgroundSound = document.getElementById('background-sound');
         if (backgroundSound) backgroundSound.muted = true;
     } else {
-        musicIcon.src = 'icons/music_on.png'; // Change to music on icon
+        musicIcon.src = 'Icons/music_on.png'; // Change to music on icon
         // Unmute background music
         const backgroundSound = document.getElementById('background-sound');
         if (backgroundSound) backgroundSound.muted = false;
