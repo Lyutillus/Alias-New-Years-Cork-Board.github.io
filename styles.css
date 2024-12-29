@@ -1,0 +1,329 @@
+﻿/* styles.css */
+
+/* Welcome Screen Styles */
+#welcome-screen {
+    /* Position */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Display */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Patrick Hand', cursive;
+    
+    /* Color */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    
+    /* Transitioning */
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 2s ease; /* Smooth fade-out effect */
+}
+
+#welcome-screen h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#welcome-screen p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.094em;
+    cursor: pointer;
+}
+
+/* Body Styles */
+body {
+    display: flex; /* Initially hide the content */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('background-main.jpg') center/cover no-repeat #000000;
+}
+
+/* Main Title */
+#board-title {
+    text-align: center; /* Center-align the title */
+    font-size: 3.5em; /* Larger font size */
+    color: #0cf7a5; /* Green color */
+    margin-bottom: 30px; /* Space between the title and cork board */
+    font-family: 'Arial', sans-serif; /* Font style */
+    text-transform: uppercase; /* Make the text uppercase */
+    letter-spacing: 2px; /* Add spacing between letters */
+    background: linear-gradient(90deg, #0cf7a5, #1e90ff, #ff69b4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Create gradient text */
+    -webkit-text-stroke: 0.094em white;
+    text-shadow: 0 0 10px #0cf7a5, 0 0 20px #1e90ff, 0 0 30px #ff69b4, 0 0 40px white;
+    animation: glow 2s infinite alternate;
+}
+
+#title-container
+{
+    opacity: 0;
+    transition: opacity 2s ease; /* Smooth fade-in effect */
+}
+
+/* Cork board */
+#corkboard {
+    display: none; /* Use grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Dynamic columns */
+    grid-auto-rows: 1fr; /* Maintain proportional height for each sticky note */
+    gap: 15px; /* Space between notes */
+    width: 80%;
+    height: 80%;
+    background: url('corkboard.png') center/cover no-repeat;
+    background-size: 100% 100%;
+    padding: 50px 70px 50px 70px; /* Increased padding to move sticky notes inward */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box; /* Ensures padding doesn't affect the width/height */
+    opacity: 0;
+    transition: opacity 2s ease; /* Smooth fade-in effect */
+}
+
+/* Sticky Note */
+.sticky-note {
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    background: url('Bookmarker.png') center/cover no-repeat;
+    background-size: 100% 100%;
+    border: 2px solid #FFFFFF;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+    overflow: hidden; /* Ensures hidden content doesn't spill out */
+    position: relative;
+}
+
+.note-name {
+    font-size: clamp(0.5em, 2vw, 0.8em); /* Dynamically adjust font size */
+    font-weight: bold;
+    color: #2a2a2a; /* Softer dark gray for better contrast with aqua background */
+    text-align: center; /* Center-align the text */
+    overflow: hidden; /* Prevent overflow */
+    text-overflow: ellipsis; /* Add ellipsis if text is too long */
+    padding: 0.5em; /* Add spacing inside the container */
+    border-radius: 8px; /* Slight rounding for a softer look */
+    font-family: 'Patrick Hand', sans-serif; /* Handwriting font */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for a nice effect */
+    background: rgba(255, 255, 255, 0.8); /* Light background to offset aqua */
+}
+
+.sticky-note .note-message,
+.sticky-note .note-translation,
+.sticky-note .note-image-message,
+.sticky-note .note-image {
+    opacity: 0; /* Makes the content invisible */
+    position: absolute; /* Takes the content out of the layout */
+    pointer-events: none; /* Prevents the hidden content from interfering with user interaction */
+}
+
+.sticky-note:hover {
+    transform: rotate(-3deg);
+}
+
+/* Expanded Note */
+#expanded-note {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 60%;
+    background: white url('flower-border.png') center/cover no-repeat;
+    background-size: 100% 100%;
+    border-radius: 15px; /* Rounded corners */
+    border: 1px solid #ddd; /* Subtle border */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px; /* Increased gap for cleaner layout */
+    z-index: 10;
+    box-sizing: border-box;
+    overflow-y: auto;
+    animation: fadeIn 0.3s ease-out; /* Smooth pop-out animation */
+}
+
+.expanded-title {
+    text-align: center; /* Center the title */
+    font-size: 1.5em; /* Larger font size for the title */
+    color: #fff; /* White text color */
+    font-family: 'Arial', sans-serif; /* Font style */
+    letter-spacing: 2px; /* Spacing between letters */
+    margin-bottom: 20px; /* Space below the title */
+    background: linear-gradient(90deg, #32cd32, #228b22, #006400); /* Green gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Gradient text */
+    text-shadow: 0 0 10px #32cd32, 0 0 20px #228b22, 0 0 30px #006400; /* Green glow effect */
+    animation: glowTitle2 1.5s infinite alternate; /* Animated glow effect */
+    margin-right: 50px; /* Align with close button */
+    margin-left: 50px;
+}
+
+#close-btn {
+    position: absolute; /* Position it absolutely */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #66bb6a, #388e3c); /* Green gradient */
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#close-btn:hover {
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+    background: linear-gradient(135deg, #ff7961, #f44336); /* Reverse gradient for a hover effect */
+}
+
+#close-btn:active {
+    transform: scale(0.95); /* Slightly shrink the button when clicked */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce shadow on click */
+    background: #d32f2f; /* Darker red for an active state */
+}
+
+.expanded-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-template-rows: auto auto; /* Rows adjust based on content */
+    gap: 15px; /* Larger gap for cleaner layout */
+    height: 100%;
+}
+
+#expanded-message,
+#expanded-translation,
+#expanded-image-message {
+    overflow: visible;
+    white-space: normal;
+    margin: 15px 0; /* Slightly larger spacing for better separation */
+    font-family: 'Nunito', 'Lora', sans-serif; /* Fancy yet legible font */
+    font-size: 1.2em; /* Keep the readable font size */
+    color: #333; /* Neutral text color */
+    line-height: 1.6; /* Slightly taller line spacing for better readability */
+    padding: 15px; /* Increase padding for a cleaner layout */
+    background: linear-gradient(135deg, #f9f9f9, #ffffff); /* Subtle gradient for depth */
+    border: 1px solid #dcdcdc; /* Softer border color */
+    border-radius: 12px; /* More pronounced rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow for a floating effect */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth interaction feedback */
+}
+
+#expanded-message:hover,
+#expanded-translation:hover,
+#expanded-image:hover,
+#expanded-image-message:hover {
+    transform: translateY(-2px); /* Slight upward movement on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+#expanded-image {
+    width: 100%; /* Take up the full width of the container */
+    height: 100%; /* Take up the full height of the container */
+    object-fit: contain; /* Maintain aspect ratio within the container */
+    margin: 0; /* Remove margins for a tighter fit */
+    border: none; /* Optional: Remove the border for a cleaner look */
+    border-radius: 0; /* Optional: Remove rounded corners if unnecessary */
+    background: none; /* Optional: Remove background if not needed */
+    padding: 0; /* Remove padding to fully fill the container */
+}
+
+#expanded-image[src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="] {
+    width: 1px;
+    height: 1px;
+    visibility: hidden; /* Optional: hides the image entirely */
+}
+
+/* Keyframe animation for a fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Keyframe animation for a glowing effect */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #0cf7a5, 0 0 20px #1e90ff, 0 0 30px #ff69b4, 0 0 40px white;
+    }
+    100% {
+        text-shadow: 0 0 20px #0cf7a5, 0 0 30px #1e90ff, 0 0 40px #ff69b4, 0 0 50px white;
+    }
+}
+
+/* Keyframe animation for the glowing effect */
+@keyframes glowTitle2 {
+    0% {
+        text-shadow: 0 0 10px #32cd32, 0 0 20px #228b22, 0 0 30px #006400;
+    }
+    100% {
+        text-shadow: 0 0 20px #32cd32, 0 0 30px #228b22, 0 0 40px #006400;
+    }
+}
+
+#sound-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 2s ease; /* Smooth fade-in effect */
+}
+
+/* Sound Controls */
+.control-button {
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    border: none;
+    border-radius: 50%; /* Rounded button */
+    padding: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.control-button:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    opacity: 0.8;
+}
+
+.control-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.control-button:focus {
+    outline: none;
+}
