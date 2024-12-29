@@ -330,13 +330,13 @@ body {
 
 @media (min-width: 1920px) {
     #corkboard {
-        padding: 3em 4em 3em 4em; /* Increased padding for larger screens */
+        padding: 4em 5em 4em 5em; /* Increased padding for larger screens */
     }
 }
 
 /* Media query for extra-large screens (e.g., 4K resolution) */
 @media (min-width: 2560px) {
     #corkboard {
-        padding: 8em 9em 8em 9em; /* Further increased padding for very large screens */
+        padding: 7em 8em 7em 8em; /* Further increased padding for very large screens */
     }
 }
