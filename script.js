@@ -54,7 +54,7 @@ window.onload = function () {
                 boardTitle.style.opacity = '1';
                 corkboard.style.opacity = '1';
                 soundControls.style.opacity = '1';
-            }, 10); // Small delay to ensure display change is processed
+            }, 20); // Small delay to ensure display change is processed
         }, 2000); // Matches the fade-out transition duration (1s)
     });
 };
