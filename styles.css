@@ -88,7 +88,7 @@ body {
     height: 80%;
     background: url('corkboard.png') center/cover no-repeat;
     background-size: 100% 100%;
-    padding: 50px 70px 50px 70px; /* Increased padding to move sticky notes inward */
+    padding: 3.125em 4.375em 3.125em 4.375em; /* Increased padding to move sticky notes inward */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     box-sizing: border-box; /* Ensures padding doesn't affect the width/height */
     opacity: 0;
@@ -328,9 +328,15 @@ body {
     outline: none;
 }
 
+@media (min-width: 1920px) {
+    #corkboard {
+        padding: 3em 4em 3em 4em; /* Increased padding for larger screens */
+    }
+}
+
 /* Media query for extra-large screens (e.g., 4K resolution) */
 @media (min-width: 2560px) {
     #corkboard {
-        padding: 6em 7em 6em 7em; /* Further increased padding for very large screens */
+        padding: 8em 9em 8em 9em; /* Further increased padding for very large screens */
     }
 }
