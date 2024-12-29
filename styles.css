@@ -327,3 +327,10 @@ body {
 .control-button:focus {
     outline: none;
 }
+
+/* Media query for extra-large screens (e.g., 4K resolution) */
+@media (min-width: 2560px) {
+    #corkboard {
+        padding: 6em 7em 6em 7em; /* Further increased padding for very large screens */
+    }
+}
