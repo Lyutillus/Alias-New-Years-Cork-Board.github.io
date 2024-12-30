@@ -1,4 +1,4 @@
-﻿/* styles.css */
+/* styles.css */
 
 /* Welcome Screen Styles */
 #welcome-screen {
@@ -8,18 +8,18 @@
     left: 0;
     width: 100%;
     height: 100%;
-    
+
     /* Display */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     font-family: 'Patrick Hand', cursive;
-    
+
     /* Color */
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    
+
     /* Transitioning */
     z-index: 9999;
     opacity: 1;
@@ -116,13 +116,13 @@ body {
 }
 
 .note-name {
-    font-size: clamp(0.5em, 2vw, 0.8em); /* Dynamically adjust font size */
+    font-size: clamp(0.6em, 2vw, 0.8em); /* Dynamically adjust font size */
     font-weight: bold;
     color: #2a2a2a; /* Softer dark gray for better contrast with aqua background */
     text-align: center; /* Center-align the text */
     overflow: hidden; /* Prevent overflow */
     text-overflow: ellipsis; /* Add ellipsis if text is too long */
-    padding: 0.5em; /* Add spacing inside the container */
+    padding: 0.2em; /* Add spacing inside the container */
     border-radius: 8px; /* Slight rounding for a softer look */
     font-family: 'Patrick Hand', sans-serif; /* Handwriting font */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for a nice effect */
@@ -328,9 +328,160 @@ body {
     outline: none;
 }
 
-/* Media query for extra-large screens (e.g., 4K resolution) */
+/* Extra-large screens (e.g., 4K resolution) */
 @media (min-width: 2560px) {
     #corkboard {
-        padding: 7em 8em 7em 8em; /* Further increased padding for very large screens */
+        padding: 5em 7em 5em 7em;
+    }
+
+    #board-title {
+        font-size: 4em;
+    }
+}
+
+/* Large screens (e.g., 1920x1080) */
+@media (min-width: 1920px) and (max-width: 2559px) {
+    #corkboard {
+        padding: 4em 5em 4em 5em;
+    }
+
+    #board-title {
+        font-size: 3.5em;
+    }
+}
+
+/* Medium screens (e.g., laptops or smaller desktops) */
+@media (min-width: 1280px) and (max-width: 1919px) {
+    #corkboard {
+        padding: 4em 5em 4em 5em;
+    }
+
+    #board-title {
+        font-size: 3em; /* Balanced for laptops or smaller desktops */
+    }
+}
+
+/* Small screens (e.g., tablets in landscape mode) */
+@media (min-width: 768px) and (max-width: 1279px) {
+    #corkboard {
+        padding: 4em 4em 4em 4em;
+    }
+
+    #board-title {
+        font-size: 2em; /* Balanced for laptops or smaller desktops */
+    }
+}
+
+/* Extra-small screens (e.g., phones) */
+@media (min-width: 430px) and (max-width: 767px) {
+    #corkboard {
+        padding: 4em 4em 4em 4em;
+    }
+
+    #board-title {
+        font-size: 2em; /* Balanced for laptops or smaller desktops */
+    }
+
+    .expanded-content {
+        grid-template-columns: 1fr; /* Stack items vertically */
+        grid-template-rows: auto;  /* Adjust rows automatically */
+    }
+
+    .expanded-title {
+        font-size: 1.1em; /* Smaller title font size */
+        margin-right: 30px; /* Adjusted alignment */
+        margin-left: 30px;
+    }
+
+    #close-btn {
+        padding: 6px 12px; /* Smaller button */
+        font-size: 0.8em; /* Smaller text */
+    }
+
+    #expanded-message,
+    #expanded-translation,
+    #expanded-image-message {
+        font-size: 1em; /* Reduced font size */
+        padding: 10px; /* Adjust padding */
+    }
+}
+
+/* Extra-small screens (e.g., phones) */
+@media (min-width: 350px) and (max-width: 429px){
+    #corkboard {
+        padding: 3em 2em 3em 2em;
+    }
+
+    #board-title {
+        font-size: 2em; /* Balanced for laptops or smaller desktops */
+    }
+
+    .expanded-content {
+        grid-template-columns: 1fr; /* Stack items vertically */
+        grid-template-rows: auto;  /* Adjust rows automatically */
+    }
+
+    .expanded-title {
+        font-size: 1em; /* Smaller title font size */
+        margin-right: 20px; /* Adjusted alignment */
+        margin-left: 20px;
+    }
+
+    #expanded-message,
+    #expanded-translation,
+    #expanded-image-message {
+        font-size: 0.9em; /* Reduced font size */
+        padding: 8px; /* Adjust padding */
+    }
+
+    #close-btn {
+        padding: 5px 10px; /* Smaller button */
+        font-size: 0.7em; /* Smaller text */
+    }
+}
+
+/* Extra-small screens (e.g., phones) */
+@media (max-width: 349px){
+    #corkboard {
+        padding: 3em 2em 3em 2em;
+        gap: 20px;
+        overflow-y: auto; /* Enable vertical scrolling */
+        height: 60vh; /* Limit the height to create a scrollable area */
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle inner shadow for a polished look */
+        border-radius: 8px; /* Optional: Rounded corners for the scrollable area */
+        background-color: #f9f9f9; /* Optional: Background color for contrast */
+        position: relative; /* Ensures proper clipping of child elements */
+        mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent); /* Fades out content at top and bottom */
+    }
+
+    .sticky-note {
+        height: 300%;
+    }
+
+    #board-title {
+        font-size: 2em; /* Balanced for laptops or smaller desktops */
+    }
+
+    .expanded-content {
+        grid-template-columns: 1fr; /* Stack items vertically */
+        grid-template-rows: auto;  /* Adjust rows automatically */
+    }
+
+    .expanded-title {
+        font-size: 1em; /* Smaller title font size */
+        margin-right: 20px; /* Adjusted alignment */
+        margin-left: 20px;
+    }
+
+    #expanded-message,
+    #expanded-translation,
+    #expanded-image-message {
+        font-size: 0.9em; /* Reduced font size */
+        padding: 8px; /* Adjust padding */
+    }
+
+    #close-btn {
+        padding: 5px 10px; /* Smaller button */
+        font-size: 0.7em; /* Smaller text */
     }
 }
