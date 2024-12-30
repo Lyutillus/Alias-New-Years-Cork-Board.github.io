@@ -247,7 +247,9 @@ body {
 #expanded-image {
     width: 100%; /* Take up the full width of the container */
     height: 100%; /* Take up the full height of the container */
-    object-fit: contain; /* Maintain aspect ratio within the container */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     margin: 0; /* Remove margins for a tighter fit */
     border: none; /* Optional: Remove the border for a cleaner look */
     border-radius: 0; /* Optional: Remove rounded corners if unnecessary */
@@ -259,6 +261,10 @@ body {
     width: 1px;
     height: 1px;
     visibility: hidden; /* Optional: hides the image entirely */
+}
+
+#expanded-image:not([src]) {
+    display: none; /* Hide images without a valid source */
 }
 
 /* Keyframe animation for a fade-in */
