@@ -1,0 +1,41 @@
+﻿<!-- Diary -->
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head Start -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self';
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    img-src 'self' data: Icons/;
+    media-src 'self' Audio/;
+    connect-src 'self';
+    object-src 'none';
+    frame-ancestors 'none';">
+    <title>Booquets Production - Diary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/diary_CSS.css">
+</head>
+<body>
+<header>
+    <h1>Diary Day</h1>
+</header>
+<main>
+    <section class="newsletter-section">
+        <h2>2025 Diary</h2>
+        <div class="pdf-container">
+            <iframe  id="pdfViewer" src="Diaries/diary_2025.pdf" allowfullscreen></iframe>
+        </div>
+        <button id="fullscreenBtn">View Full Screen</button>
+    </section>
+</main>
+<footer>
+    <p> Booquets Production </p>
+</footer>
+    <script src="javascript/diary_JS.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+﻿/* General Reset */
+body, h1, h2, p, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #2e4733; /* More green */
+    color: #ffffff;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background-color: #3b6142; /* Slightly darker green */
+    color: #f7e7c1;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Main Section */
+main {
+    flex: 1;
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.newsletter-section h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #a8d5ba;
+}
+
+@media (max-width: 768px) {
+    .newsletter-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+.pdf-container {
+    background-color: #3b6142;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.pdf-container iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 8px;
+}
+
+@media (max-width: 480px) {
+    .pdf-container iframe {
+        height: 300px;
+    }
+}
+
+/* Full Screen Button */
+#fullscreenBtn {
+    margin: 15px auto;
+    display: block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #4a9a5b;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#fullscreenBtn:hover {
+    background-color: #3b7e4a;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #3b6142;
+    color: #f7e7c1;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+#pdfViewerContainer {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    max-width: 900px;
+    height: 70vh; /* Make the height responsive to screen size */
+    min-height: 300px; /* Prevent the viewer from becoming too small */
+    background-color: #3b6142;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+#pdfViewer {
+    flex: 1;
+    overflow: auto;
+    background-color: #ffffff;
+}
+
+
+@media (max-width: 480px) {
+    footer p {
+        font-size: 0.8rem;
+    }
+}
