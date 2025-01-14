@@ -8,14 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const fullscreenBtn = document.getElementById("fullscreenBtn");
 
     // Check if the PDF loads successfully
-    object.onerror = function () {
+    iframe.onerror = function () {
         object.style.display = "none"; // Hide the object
         fallback.style.display = "block"; // Show the fallback content
         fullscreenBtn.disabled = true;  // Disable the fullscreen button
     };
 
     // Fallback for older browsers or restricted environments
-    object.onload = function () {
+    iframe.onload = function () {
         // If PDF loads correctly, enable the fullscreen button
         fullscreenBtn.disabled = false;
     };
