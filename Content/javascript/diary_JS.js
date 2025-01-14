@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             iframe.style.display = "none";
             fallback.style.display = "block";
             fullscreenBtn.disabled = true;  // Disable the fullscreen button
+            fullscreenBtn.style.display = "none";
         } else {
             fullscreenBtn.disabled = false; // Enable the fullscreen button if the PDF loads correctly
         }
