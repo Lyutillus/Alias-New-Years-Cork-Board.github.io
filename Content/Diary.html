@@ -28,7 +28,15 @@
     <section class="newsletter-section">
         <h2>2025 Diary</h2>
         <div class="pdf-container">
+            <!-- PDF Viewer -->
             <iframe  id="pdfViewer" src="Diaries/diary_2025.pdf" allowfullscreen></iframe>
+
+            <!-- Fallback Content -->
+            <div id="fallback" class="fallback">
+                <p>It seems the PDF viewer couldn't load the file. You can 
+                    <a href="https://BooquetsProduction.com/Content/Diaries/diary_2025.pdf" download>download the PDF here</a>.</p>
+            </div>
+            
         </div>
         <button id="fullscreenBtn">View Full Screen</button>
     </section>
