@@ -32,11 +32,17 @@ window.addEventListener('resize', resizePdfViewer);
 document.addEventListener("DOMContentLoaded", function () {
     const iframe = document.getElementById("pdfViewer");
     const fallback = document.getElementById("fallback");
+    const fullscreenBtn = document.getElementById("fullscreenBtn");
 
     // Check if the iframe loads successfully
     iframe.onerror = function () {
-        iframe.style.display = "none"; // Hide the iframe
-        fallback.style.display = "block"; // Show the fallback content
+        if (iframe.contentDocument && iframe.contentDocument.body.innerHTML.includes("404")) {
+            iframe.style.display = "none";
+            fallback.style.display = "block";
+            fullscreenBtn.disabled = true;  // Disable the fullscreen button
+        } else {
+            fullscreenBtn.disabled = false; // Enable the fullscreen button if the PDF loads correctly
+        }
     };
 
     // Fallback for older browsers or restricted environments
