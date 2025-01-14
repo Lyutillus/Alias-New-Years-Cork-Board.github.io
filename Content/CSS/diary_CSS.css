@@ -1,5 +1,5 @@
 ﻿/* General Reset */
-body, h1, h2, p, button {
+body, h1, h2, p, button, object {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -60,6 +60,7 @@ main {
     }
 }
 
+/* PDF Viewer Container */
 .pdf-container {
     background-color: #3b6142;
     padding: 10px;
@@ -68,7 +69,7 @@ main {
     overflow: hidden;
 }
 
-.pdf-container iframe {
+.pdf-container object {
     width: 100%;
     height: 500px;
     border: none;
@@ -76,7 +77,7 @@ main {
 }
 
 @media (max-width: 480px) {
-    .pdf-container iframe {
+    .pdf-container object {
         height: 300px;
     }
 }
@@ -98,8 +99,6 @@ main {
 #fullscreenBtn:hover {
     background-color: #3b7e4a;
 }
-
-
 
 /* Footer Styling */
 footer {
@@ -130,26 +129,7 @@ footer p {
     text-decoration: underline;
 }
 
-#pdfViewerContainer {
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-    max-width: 900px;
-    height: 70vh; /* Make the height responsive to screen size */
-    min-height: 300px; /* Prevent the viewer from becoming too small */
-    background-color: #3b6142;
-    border-radius: 8px;
-    overflow: hidden;
-    margin: 20px auto;
-}
-
-#pdfViewer {
-    flex: 1;
-    overflow: auto;
-    background-color: #ffffff;
-}
-
-
+/* Mobile and Small Screen Adjustments */
 @media (max-width: 480px) {
     footer p {
         font-size: 0.8rem;

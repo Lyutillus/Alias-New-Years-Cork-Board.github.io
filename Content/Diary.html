@@ -14,8 +14,7 @@
     img-src 'self' data: Icons/;
     media-src 'self' Audio/;
     connect-src 'self';
-    object-src 'none';
-    frame-ancestors 'none';">
+    object-src 'none';">
     <title>Booquets Production - Diary</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/diary_CSS.css">
@@ -29,7 +28,11 @@
         <h2>2025 Diary</h2>
         <div class="pdf-container">
             <!-- PDF Viewer -->
-            <iframe  id="pdfViewer" src="https://booquetsproduction.com/Content/Diaries/diary_2025.pdf" allowfullscreen></iframe>
+            <object id="pdfViewer" data="https://booquetsproduction.com/Content/Diaries/diary_2025.pdf" type="application/pdf" width="100%" height="500px">
+                <p>Your browser does not support PDF embedding. You can
+                    <a href="https://booquetsproduction.com/Content/Diaries/diary_2025.pdf" download>download the PDF here</a>.
+                </p>
+            </object>
 
             <!-- Fallback Content -->
             <div id="fallback" class="fallback">
