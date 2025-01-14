@@ -1,0 +1,2 @@
+﻿/Content/Diaries/diary_2025.pdf
+  Access-Control-Allow-Origin: *
